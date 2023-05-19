@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Insert a description here please">
+    <meta name="author" content="Your Student ID">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Title of your Website -->
+    <title>Salite Himself</title>
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+    <!-- Top Menu Bar -->
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+<a class="py-4 d-none d-md-inline-block" id="menu-item-1" href="https://www.instagram.com/" target="_blank">Instagram</a>
+<a class="py-3 d-none d-md-inline-block" id="menu-item-2" href="https://www.fidelity.com/go/join-fidelity-investments?imm_pid=700000001008875&immid=100920_SEA&imm_eid=ep71500665667&utm_source=GOOGLE&utm_medium=paid_search&utm_account_id=700000001008875&utm_campaign=BRD&utm_content=58700007877883966&utm_term=fidelity&utm_campaign_id=100920&utm_id=71700000096184654&gad=1&gclid=CjwKCAjwjMiiBhA4EiwAZe6jQ2hqGj6T0rFUK8BjGRKT2z2is2TThdZhQTY5soq7EyThAI1wrR8jCxoCzQkQAvD_BwE&gclsrc=aw.ds" target="_blank">Fidelity</a>
+<a class="py-4 d-none d-md-inline-block" id="menu-item-3" href="https://www.youtube.com/@isalite" target="_blank">YouTube</a>
+<a class="py-5 d-none d-md-inline-block" id="menu-item-4" href="https://www.apple.com/apple-music/" target="_blank">Apple Music</a>
+<a class="py-4 d-none d-md-inline-block" id="menu-item-5" href="https://www.youngla.com/?gclid=CjwKCAjwjMiiBhA4EiwAZe6jQ2-Cdj5Naeeol4JHpqpcvQ57unbn15bP98wNasYeXjXUkgOi9UF--hoCKcAQAvD_BwE" target="_blank">YoungLA</a>
+<a class="py-3 d-none d-md-inline-block" id="menu-item-6" href="https://facts.net/random-facts/" target="_blank">RandomFacts</a>
+<a class="py-4 d-none d-md-inline-block" id="menu-item-7" href="https://finance.yahoo.com/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIRGrg8fY2mhv1YXXMLN-OkwCLD9jst95PysauPG7yjgNQaz1m1pm2DORZDo_Rw4JxGzpNIbvZefuVJJieRiP3eOrvX9H8hCFRGHTGA_A5bU4_DreDSsXDIg7cEp3pFczhuob_AG7uRMx31rF1yx9iwO7Xa1WtwLYX3sBTRCof8O" target="_blank">YahooFinance</a>
+    </div>
+</nav>
+<!-- Main Header Section h1-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Discover the Creator of This Website...</h1>
+        <p class="lead font-weight-normal">Loves making content on Youtube, working out and shopping for gym attire, also playing the 12 string guitar. Some of his favorite websites are linked at the header. If you want to see him those strings, click the button down below.</p>
+        <a class="btn btn-outline-secondary" href="https://youtu.be/xkcUM2p9ZOo?t=10" target="_blank">Coming soon</a>
+    </div>
+    <!-- Left Tile -->
+<div class="d-md-flex flex-md-equal w-100">
+    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Sign up</h2>
+            <p class="lead">Sign up now to get instant access to our educational content</p>
+        </div>
+        <!-- Web form when submitted will send a text message -->
+        <form class="p-2" onsubmit="sendTextMessage(); return false;">
+            <!-- Full Name Form Field -->
+            <div class="form-group">
+                <label for="example-first-name">Full Name</label>
+                <input type="text" value="Full Name" class="form-control" id="example-first-name" aria-describedby="emailHelp">
+            </div>
+            <!-- Phone Number Form Field -->
+            <div class="form-group">
+                <label for="example-tel-input">Phone number</label>
+                <input type="tel" class="form-control" value="1408555555" id="example-tel-input">
+            </div>
+            <!-- JavaScript that handles onSubmit logic -->
+            <!-- Configure the XHR request below with your own credentials -->
+            <script>
+            function sendTextMessage() {
+                console.log("Hello world!");
+                var xhr = new XMLHttpRequest();
+                var accountSID = "ACa36d7a6846218cd58a107338a43e8e34";
+                var authToken = "4e60b3d8d03739d88d304088610b1c97";
+                var base64encoded = accountSID + ":" + authToken;
+                var params = "To=" + document.getElementById('example-tel-input').value + "&From=" + "18777648286" + "&Body=" + "Hello " + document.getElementById('example-first-name').value + ", welcome! Im so glad we were able to get in contact! Hope you enjoy."
+                xhr.open("POST", "https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Authorization', 'Basic ' + btoa(base64encoded));
+                xhr.send(params);
+            }
+            </script>
+            <!-- Submit button that will execute the sendTextMessage function -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>
+<!-- Right Tile -->
+    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">SUBSCRIBE</h2>
+            <p class="lead">Make sure to hit the subscribe button and dont forget to comment video ideas that you may have! Make sure to look for the channel witht the following profile picture:</p>
+            <img class="mx-auto" src="SalitePIC.jpeg" height="250px">
+        </div>
+        <div class="mx-auto" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+</div>
+  </body>
+</html>
